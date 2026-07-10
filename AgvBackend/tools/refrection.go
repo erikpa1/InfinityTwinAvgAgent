@@ -3,39 +3,7 @@ package tools
 import (
 	"fmt"
 	"reflect"
-	"strings"
-	"turtle/interfaces"
 )
-
-func GetUidOrIdBson(entity interface{}) string {
-
-	_, ok := entity.(interfaces.UidMap)
-
-	if ok {
-		return "uid"
-	}
-
-	t := reflect.TypeOf(entity)
-
-	if t.Kind() == reflect.Ptr {
-		t = t.Elem() // Dereference if pointer
-	}
-
-	for i := 0; i < t.NumField(); i++ {
-		field := t.Field(i)
-		bsonTag := field.Tag.Get("bson")
-
-		// Split bson tag on ',' to handle options like "_id,omitempty"
-		bsonParts := strings.Split(bsonTag, ",")
-		for _, part := range bsonParts {
-			if strings.TrimSpace(part) == "_id" {
-				return "_id" // Found _id, return immediately
-			}
-		}
-	}
-
-	return "uid" // Default to "uid" if _id is not found
-}
 
 func GetStringField(obj interface{}, fieldName string) (string, bool) {
 	val, ok := GetField[string](obj, fieldName)
