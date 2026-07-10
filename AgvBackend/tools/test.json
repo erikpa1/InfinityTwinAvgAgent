@@ -1,0 +1,29 @@
+{
+    "uid": "686a9a720b5a8ae81e117ace",
+    "userLevel": 0,
+    "name": "File write agent",
+    "description": "This agent can write file containing \"Hello world\" on disc.",
+    "specialization": "filesystem",
+    "useModel": "000000000000000000000000",
+    "createdAt": 1751816818552,
+    "updatedAt": 1753126340482,
+    "createdBy": 1751816818552,
+    "updatedBy": 1753126340482,
+    "url": "",
+    "xApiKey": "000000000000000000000000",
+    "args": [],
+    "methodType": 0,
+    "commandExample": "",
+    "agentsProps": {
+        "role": "",
+        "systemPrompt": "",
+        "tools": [],
+        "requiredAgents": [],
+        "answerFormat": "",
+        "requiredParameters": []
+    },
+    "tools": [
+        "67446973634c697374000000",
+        "674469736357726974650000"
+    ]
+}
